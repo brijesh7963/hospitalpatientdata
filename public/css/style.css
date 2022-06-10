@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,700;1,400&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Charis SIL', serif;
+}
+/*
+:root {
+    --heading: rgb(0, 10, 45);
+    --para: #777;
+    --para-tint: #e4e4e4;
+    --white: #fff;
+    --black:#212529;
+    --helper: #8490ff;
+    --helper-tint: #f3f4ff;
+    --bg: rgb(249, 249, 255);
+    --gradient: linear-gradient(0deg, rgb(132 144 255) 0%, rgb(98 189 252) 100%);
+    --gradientSupport: -webkit-linear-gradient(0deg,
+            rgb(132 144 255) 0%,
+            rgb(98 189 252) 100%);
+    --shadow: 0px 0px 20px 0px rgb(132 144 255/20%);
+    --shadowSupport: 0px 20px 20px 0px rgb(132 144 255 / 30%);
+  }
+  */
+html {
+    font-size: 62.5%;
+    /* 1rem = 10px */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    overflow-x: hidden;
+    
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Charis SIL', serif;
+  }
+  
+ 
+  li {
+    list-style: none;
+  }
+
+  /* header */
+  .header {
+    padding: 0 4.8rem;
+    height: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(rgb(8, 41, 83), rgb(47, 14, 100), rgb(66, 6, 82));
+    background-color: #05091b;
+    z-index: 9999;
+    
+  }
+  
+  .header .logo{
+    height: 6rem;
+    width: 6rem;
+    margin-left: 2rem;
+    transition: all linear;
+    animation: rot 2s linear infinite;
+  }
+  @keyframes rot{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+  }
+  .navbar-list {
+    display: flex;
+    gap: 4.8rem;
+    list-style: none;
+  }
+  
+  .navbar-link:link,
+  .navbar-link:visited {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #e9edf1;
+    transition: all 0.3s;
+  }
+  
+  .navbar-link:hover,
+  .navbar-link:active {
+    color: #eb30d2;
+  }
+  
+  .mobile-navbar-btn {
+    display: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  
+  .mobile-nav-icon {
+    width: 4rem;
+    height: 4rem;
+    color: #212529;
+  }
+  
+  .mobile-nav-icon[name="close-outline"] {
+    display: none;
+  }
+  
+  
+  /* ===========================================
+  Sticky navbar
+  ======================================= */
+  
+  .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: -2px 3px 3px rgb(64, 4, 99);
+  } 
+  
+    /*footer  */
+    .footer{
+      background-color: #100741;
+      width: 100%;
+      height: 6rem;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* patient */
+    .container{
+      margin-top: 8rem;
+    }
+/* patient details form */
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.container .register{
+          margin-top: 1rem;
+          border: 2px solid black;
+          width: 70rem;
+          height: 100rem;
+          display: flex;
+          flex-direction: column;
+          justify-content:space-evenly;
+          align-items: center;
+          background-color: rgb(179, 173, 173);
+}
+
+.register .pform form{
+  display: flex;
+  flex-direction: column;
+  height: 90rem;
+  /* border: 2px solid black; */
+  width: 60rem;
+  display: flex;
+  flex-direction: column;
+ 
+  justify-content: space-evenly;
+}
+
+.register .pform form h2{
+  margin: 2rem;
+}
+.register .pform form input{
+  height: 3rem;
+  margin-top: 2rem;
+}
+
+.pform form div{
+  display: flex;
+}
+.pform form .exam{
+  display: flex;
+  flex-direction: column;
+ 
+}
+.pform form .exam input{
+  margin: 0;
+ 
+}
+.pform form .exam div{
+  margin: 1rem;
+}
+
+/* print all */
+.printall{
+ 
+  width: 100rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pdata{
+  border: 2px solid black;
+  width: 100rem;
+}
+.pdata{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70rem;
+}
+.printall button{
+  margin: 1rem;
+}
+
+/* update */
+.container1{
+  width: 100%;
+  height: 80rem;
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+}
+.register1{
+  background-color: gray;
+  width: 60rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70rem;
+}
+button{
+  cursor: pointer;
+}
+.register1 div{
+  margin-top: 1rem;
+}
+/* contact us */
+.contact{
+  height: 100vh;
+  width: 100%;
+  margin-top: 8rem;
+}
+.contact .cont{
+  width: 40rem;
+  height: 40rem;
+  
+}
+
+/* home page */
+.home{
+  width: 100%;
+  height: 100vh;
+  margin-top: 8rem;
+  display: flex;
+  flex-direction:column ;
+  align-items: center;
+  
+}
+.home .first{
+  background-color: #0b1358;
+  width: 50rem;
+  height: 5rem;
+  margin-top: 3rem;
+  text-align: center;
+  color: white;
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px rgb(100, 100, 207);
+}
+
+.second img{
+  margin-top: 5rem;
+  width: 90rem;
+  height: 50rem;
+  border-radius: 1rem;
+ 
+  box-shadow: 3px 5px 5px rgb(9, 9, 36);
+}
+.first .health{
+  animation: mov 3s infinite linear;
+}
+@keyframes mov {
+  0% {transform: translateX(-20rem);}
+  50%{transform: translateX(10rem);}
+  100%{transform: translateX(40rem);}
+  
+}
+
+
+@media(max-width:375px){
+  /* Responsiveness */
+.mobile-navbar-btn {
+  display: block;
+  z-index: 999;
+  border: 2px solid #ebdde1;
+  color: #212529;
+}
+.header {
+  position: relative;
+}
+
+
+.navbar {
+  /* display: none; */
+  width: 100%;
+  height: 100vh;
+  background: #105b94;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* to get the tranisition  */
+  transform: translateX(100%);
+  transition: all 0.5s linear;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.navbar-list {
+  flex-direction: column;
+  align-items: center;
+}
+
+.active .navbar {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.active .mobile-navbar-btn .mobile-nav-icon[name="close-outline"] {
+  display: block;
+}
+
+.active .mobile-navbar-btn .mobile-nav-icon[name="menu-outline"] {
+  display: none;
+}
+
+  .header {
+    padding: 0 2.4rem;
+    height: 6rem;
+  }
+  .header .logo{
+    height: 5.5rem;
+    width: 5.5rem;
+  }
+
+  /* patient form */
+  .container .register{
+    margin-top: 1rem;
+    border: 2px solid black;
+    width: 37rem;
+    height: 100rem;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    background-color: rgb(179, 173, 173);
+}
+.register .pform form{
+  display: flex;
+  flex-direction: column;
+  height: 90rem;
+  /* border: 2px solid black; */
+  width: 36rem;
+  display: flex;
+  flex-direction: column;
+ 
+  justify-content: space-evenly;
+}
+.printall{
+ 
+  width: 37.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pdata{
+  border: 2px solid black;
+  width: 37.5rem;
+}
+.pdata{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 37.5rem;
+}
+
+.home .first{
+  width: 34rem;
+  margin-top: 0;
+}
+}

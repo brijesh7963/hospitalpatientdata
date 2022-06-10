@@ -1,0 +1,75 @@
+<%- include('./partials/header.ejs')%>
+<%- include('./partials/navbar.ejs')%>
+<div class="container1">
+<div class="register1">
+    <div class="reg">
+        <h1>Update Patient Details</h1><hr>
+    </div>
+    <div class="pform1">
+        <form action="/patient/update/<%= data._id %>" method="post">
+            <div class="pname">
+                <label for="fname">Patient name:</label>
+                <input type="text" name="name" placeholder="Enter patient name" id="name" value="<%= data.name %>">
+            </div>
+            <div class="page">
+                <label for="page">Age:</label>
+                <input type="number" name="age" placeholder="Enter age" id="age" value="<%= data.age %>">
+            </div>
+            <div class="pgender">
+                <label for="pgender">Gender:</label>
+                <input type="text" name="gender" placeholder="male or female" id="gender" value="<%= data.gender %>">
+            </div>
+
+            <div class="phistory">
+                <div class="procedure">
+                    <h2>Dignosis Procedure</h2>
+                </div><br><br>
+                <label for="phistory">Preoperative History</label>
+                <input type="text" name="history" id="history" placeholder="Preoperative History" value="<%= data.history %>">
+            </div>
+            <div class="pastphistory">
+                <label for="pasthistory">Past History</label>
+                <input type="text" name="pasthistory" value=" <%= data.pasthistory %>" id="pasthistory" placeholder="If no write no">
+            </div>
+            <div class="comorbidity">
+                <label for="pasthistory"><h2>Comorbidity:</h2></label>
+                <input type="text" name="comor" id="com" placeholder="HTN,T2DM,TB,">
+            </div>
+            <div class="exam">
+                <div class="invest">
+                    <h2>Examination and Investigation</h2>
+                </div>
+                <div class="hb">
+                    <label for="hb">1. Hb-</label>
+                    <input type="text" name="hb" value="<%= data.hb %>" id="hb">
+                </div>
+                <div class="urea">
+                    <label for="urea">2. Urea-</label>
+                    <input type="text" name="urea" value="<%= data.urea %>" id="urea">
+                </div>
+                <div class="rbs">
+                    <label for="rbs">3. RBS-</label>
+                    <input type="text" name="rbs" value="<%= data.rbs %>" id="rbs">
+                </div>
+                <div class="rme">
+                    <label for="rme">4. Urine RME-</label>
+                    <input type="text" name="rme" value="<%= data.rme %>" id="rme">
+                </div>
+                <div class="culture">
+                    <label for="culture">5. Urinr Culture-</label>
+                    <input type="text" name="culture" value="<%= data.culture %>" id="culture">
+                </div>
+                <div class="special">
+                    <label for="special">6. Special Investigation-</label>
+                    <input type="text" name="special" value="<%= data.special %>" id="special">
+                </div>
+            </div>
+            <div class="btn">
+                <button type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+<%- include('./partials/footer.ejs')%>

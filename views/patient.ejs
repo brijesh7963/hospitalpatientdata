@@ -1,0 +1,144 @@
+<%- include('./partials/header.ejs')%>
+    <%- include('./partials/navbar.ejs')%>
+
+        <div class="container">
+            <div class="register">
+                <div class="reg">
+                    <h1>Patient Details</h1><hr>
+                </div>
+                <div class="pform">
+                    <form action="/patient" method="post">
+                        <div class="pname">
+                            <label for="fname">
+                                <h2>Patient name:</h2>
+                            </label>
+                            <input type="text" name="name" placeholder="Enter patient name" id="name">
+                        </div>
+                        <div class="page">
+                            <label for="page">
+                                <h2>Age:</h2>
+                            </label>
+                            <input type="number" name="age" placeholder="Enter age" id="age">
+                        </div>
+                        <div class="pgender">
+                            <label for="pgender">
+                                <h2> Gender:</h2>
+                            </label>
+                            <input type="text" name="gender" placeholder="male or female" id="gender">
+                        </div><br>
+
+
+                        <div class="procedure">
+                            <h2>Dignosis Procedure</h2>
+                        </div>
+                        <div class="phistory">
+                            <label for="phistory"><h2>Preoperative History:</h2></label>
+                            <input type="text" name="history" id="history" placeholder="Preoperative History">
+                        </div>
+                        <div class="pastphistory">
+                            <label for="pasthistory"><h2>Past History:</h2></label>
+                            <input type="text" name="pasthistory" id="pasthistory" placeholder="If any..">
+                        </div>
+                        <div class="comorbidity">
+                            <label for="pasthistory"><h2>Comorbidity:</h2></label>
+                            <input type="text" name="comor" id="com" placeholder="HTN,T2DM,TB,">
+                        </div>
+                        <div class="exam">
+                            <div class="invest">
+                                <h2>Examination and Investigation</h2>
+                            </div>
+                            <div class="hb">
+                                <label for="hb">1. Hb-</label>
+                                <input type="text" name="hb" id="hb">
+                            </div>
+                            <div class="urea">
+                                <label for="urea">2. Urea-</label>
+                                <input type="text" name="urea" id="urea">
+                            </div>
+                            <div class="rbs">
+                                <label for="rbs">3. RBS-</label>
+                                <input type="text" name="rbs" id="rbs">
+                            </div>
+                            <div class="rme">
+                                <label for="rme">4. Urine RME-</label>
+                                <input type="text" name="rme" id="rme">
+                            </div>
+                            <div class="culture">
+                                <label for="culture">5. Urinr Culture-</label>
+                                <input type="text" name="culture" id="culture">
+                            </div>
+                            <div class="special">
+                                <label for="special">6. Special Investigation-</label>
+                                <input type="text" name="special" id="special">
+                            </div><br>
+
+                        </div>
+                        <div class="btn">
+                            <button type="submit">submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br><hr><br>
+            <div class="printall">
+                <div class="allpatient">
+                    <h1>All Patient Details</h1><hr>
+                </div>
+                <% let i=1 %>
+                    <% data.forEach((item)=>{ %>
+                        <div class="pdata">
+                            <div class="count">
+                                <h2>
+                                    <%= i++ %>
+                                </h2>
+                            </div><br>
+                            <div class="padata">
+                                <h2>Patient Name: <%=item.name %>
+                                </h2><br>
+                                <h2>Age: <%=item.age%>
+                                </h2><br>
+                                <h2>Gender: <%=item.gender %>
+                                </h2><br>
+                                <h2>Date of Registration : <%=item.date %> </h2>
+                                <br><br><br>
+
+                                <h2>Dignosis Procedure</h2><hr><br>
+                                <h2>Preoperative History: <%=item.history %>
+                                </h2><br>
+                                <h2>Past History: <%=item.pasthistory %>
+                                </h2><br>
+                                <h2>Comorbidity : <%=item.comor %></h2><br>
+                                <br><br>
+
+                                <h2>Examination and Investigation</h2><hr>
+
+                                <h2>1. Hb- :<%=item.hb %>
+                                </h2><br>
+                                <h2>2. Urea- :<%=item.urea %>
+                                </h2><br>
+                                <h2>3. RBS- :<%=item.rbs %>
+                                </h2><br>
+                                <h2>4. Urine RME- :<%=item.rme %>
+                                </h2><br>
+                                <h2>5. Urinr Culture- :<%=item.culture %>
+                                </h2><br>
+                                <h2>6. Special Investigation-- :<%=item.special %>
+                                </h2><br>
+                            </div>
+                            <div id="editor"></div>
+                            <button id="cmd" class="cmd">Download PDF</button>
+                            <div class="edit">
+                                <form action="/patient/edit/<%= item._id %>" method="get"><button
+                                        type="submit">Update</button></form>
+                                <form action="/patient/delete/<%= item._id %>" method="post"><button
+                                        type="submit">Delete</button></form>
+                            </div>
+
+                        </div><br><br>
+                        <% })%>
+            </div>
+        </div>
+
+
+
+        <%- include('./partials/footer.ejs')%>
